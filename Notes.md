@@ -80,3 +80,9 @@ Builds quickly                                          Yes             No
 Produces image heavily optimized for size               No              Yes
 Can build from custom airflow sources (forks)           No              Yes
 Can build on air-gaped system                           No              Yes
+
+
+For Dependencies:
+- every change in dependency, docker must be rebuild: 
+        > docker build . --tag extending_airflow:latest
+        > docker-compose up -d --no-deps --build airflow-webserver airflow-scheduler
