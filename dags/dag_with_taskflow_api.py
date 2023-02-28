@@ -27,7 +27,7 @@ def hello_world_etl():
 
     @task()
     def greet(first_name, last_name, age):
-        print(F'Hello World! My name is {first_name} {last_name} and age I am {age} years old.')
+        print(f'Hello World! My name is {first_name} {last_name} and age I am {age} years old.')
 
     # name = get_name()
     name_dict = get_name()

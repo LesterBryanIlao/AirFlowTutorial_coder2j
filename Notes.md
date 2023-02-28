@@ -42,4 +42,41 @@ SUMMARY:
 no_status >> scheduledr > scheduled >> executor > queued >> worker > running > success
 
 Basic Architecture
-Data Engineer
+Data Engineers
+
+Schedule with Cron Expression
+Schedule Interval: (1) datetime.timedelta and (2) Cron Expession
+
+Cron Expression - is a string comprising five fields separated by whitespace that represents a set of times, normally as a schedule to execute some routine.
+e.g.    15 14 1 * *
+        min hr day(month) month day(week)
+
+Cron Expression Preset
+Preset      Meaning                                                             Cron
+None        Don't schedule, use for exclusively externally triggered DAGs
+@once       Schedule once and once only works                               
+@hourly     Run once an hour at the beginning of the hour                       0 * * * *
+@daily      Run once day at midnight                                            0 0 * * *
+@weekly     Run once a week at midnight on Sunday morning                       0 0 * * 0
+@monthly    Run once a month at midnight of the first day of the month          0 0 1 * *
+@yearly     Run once a year at midnight of January 1                            0 0 1 1 *
+##### NOTE: You can use crontab guru for interpretation
+
+
+Aiflow Connection (Host, User, Password, etc.)
+1. Database Servers (MySQL, PostgreSQL, ...)
+2. Cloud Servers (AWS, Azure, ...)
+3. Other
+
+
+Two Ways To Install Python Independencies To Your Airflow Docker Container
+1. Image Extending
+2. Image Customizing
+
+Property                                                Extending       CustomizingCan be built without airflow resources                  Yes             No
+Uses familiar 'FROM' pattern of image building          Yes             No
+Requires only basic knowledge about images              Yes             No
+Builds quickly                                          Yes             No
+Produces image heavily optimized for size               No              Yes
+Can build from custom airflow sources (forks)           No              Yes
+Can build on air-gaped system                           No              Yes
