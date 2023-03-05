@@ -73,7 +73,8 @@ Two Ways To Install Python Independencies To Your Airflow Docker Container
 1. Image Extending
 2. Image Customizing
 
-Property                                                Extending       CustomizingCan be built without airflow resources                  Yes             No
+Property                                                Extending       Customizing
+Can be built without airflow resources                  Yes             No
 Uses familiar 'FROM' pattern of image building          Yes             No
 Requires only basic knowledge about images              Yes             No
 Builds quickly                                          Yes             No
@@ -86,3 +87,6 @@ For Dependencies:
 - every change in dependency, docker must be rebuild: 
         > docker build . --tag extending_airflow:latest
         > docker-compose up -d --no-deps --build airflow-webserver airflow-scheduler
+        
+Sensor - a special type of operator which waits for something to occur
+use case: don't know exact time when the file exists
