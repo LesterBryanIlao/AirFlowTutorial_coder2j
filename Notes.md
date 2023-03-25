@@ -89,4 +89,4 @@ For Dependencies:
         > docker-compose up -d --no-deps --build airflow-webserver airflow-scheduler
         
 Sensor - a special type of operator which waits for something to occur
-use case: don't know exact time when the file exists
+use case: don't know exact time when the file exists    
